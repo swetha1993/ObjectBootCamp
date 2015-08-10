@@ -4,7 +4,7 @@ public class Foot extends Unit{
 	
 	public Foot(double qty) {
 		super(qty);
-		// TODO Auto-generated constructor stub
+		
 	}
 
 	@Override
@@ -14,6 +14,11 @@ public class Foot extends Unit{
 	
 	public static Foot convert(Unit qty){
 		return new Foot(qty.getConversionToCentimeter()*0.0328084);
+	}
+	
+	public Foot add(Unit qty){
+		Centimeter cm=new Centimeter(this.getConversionToCentimeter()+qty.getConversionToCentimeter());
+		return Foot.convert(cm);
 	}
 
 }

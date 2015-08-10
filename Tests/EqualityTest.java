@@ -57,4 +57,20 @@ public class EqualityTest {
 
 		Assert.assertEquals(inch.getConversionToCentimeter(),m.getConversionToCentimeter(), 1);
 	}
+	
+	@Test
+	public void TestForAdditionofInchAndMeter(){
+		Inch inch=new Inch(10);
+		Meter meter=new Meter(20);
+		Meter addResult=meter.add(inch);
+		Assert.assertTrue(addResult.qty==20.254);
+	}
+	
+	@Test
+	public void TestForIncorrectAdditionOfInchAndMeter(){
+		Inch inch=new Inch(10);
+		Meter meter=new Meter(20);
+		Meter addResult=meter.add(inch);
+		Assert.assertFalse(addResult.qty!=20.254);
+	}
 }

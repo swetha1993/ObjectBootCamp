@@ -14,5 +14,10 @@ public class Meter extends Unit{
 		return new Meter(qty.getConversionToCentimeter()*0.01);
 	}
 	
+	public Meter add(Unit qty){
+		Centimeter cm=new Centimeter(this.getConversionToCentimeter()+qty.getConversionToCentimeter());
+		return Meter.convert(cm);
+	}
+	
 }
 

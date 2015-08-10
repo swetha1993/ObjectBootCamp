@@ -14,4 +14,9 @@ public class Centimeter extends Unit {
 	public static Centimeter convert(Unit qty){
 		return new Centimeter(qty.getConversionToCentimeter());
 	}
+	
+	public Centimeter add(Unit qty){
+		Centimeter cm=new Centimeter(this.getConversionToCentimeter()+qty.getConversionToCentimeter());
+		return cm;
+	}
 }

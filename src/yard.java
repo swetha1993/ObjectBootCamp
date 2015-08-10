@@ -14,4 +14,9 @@ public class yard extends Unit{
 	public static yard convert(Unit qty){
 		return new yard(qty.getConversionToCentimeter()*0.0109361);
 	}
+	
+	public yard add(Unit qty){
+		Centimeter cm=new Centimeter(this.getConversionToCentimeter()+qty.getConversionToCentimeter());
+		return yard.convert(cm);
+	}
 }
