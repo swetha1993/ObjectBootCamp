@@ -1,23 +1,18 @@
 
 public class Meter extends Unit{
 
-	double qty;
-	
+	public Meter(double qty) {
+		super(qty);
+	}
+
 	@Override
 	public double getConversionToCentimeter(){
 		return qty*100;
 	}
-
-	/*@Override
-	public double getConversionToMeter() {
-		return qty;
-	}*/
-
-	/*@Override
-	public boolean checkEquality(double qty1) {
-		// TODO Auto-generated method stub
-		return false;
-	}*/
+	
+	public static Meter convert(Unit qty){
+		return new Meter(qty.getConversionToCentimeter()*0.01);
+	}
 	
 }
 

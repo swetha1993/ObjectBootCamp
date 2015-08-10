@@ -1,20 +1,17 @@
 
 public class Centimeter extends Unit {
-	double qty;
+	
+	public Centimeter(double qty) {
+		super(qty);
+		
+	}
 
 	@Override
 	public double getConversionToCentimeter() {
 		return qty;
 	}
-
-	/*@Override
-	public double getConversionToMeter() {
-		return qty*0.01;
-	}*/
-
-	/*@Override
-	public boolean checkEquality(double qty1) {
-		// TODO Auto-generated method stub
-		return false;
-	}*/
+	
+	public static Centimeter convert(Unit qty){
+		return new Centimeter(qty.getConversionToCentimeter());
+	}
 }
