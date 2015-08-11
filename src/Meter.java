@@ -1,7 +1,7 @@
 
 public class Meter extends Length{
 
-	private final double conversion_factor=0.01;
+	private final double conversion_factor=100;
 	
 	public Meter(double qty) {
 		super(qty);

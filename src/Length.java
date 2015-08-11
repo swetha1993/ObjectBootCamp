@@ -18,7 +18,7 @@ public abstract class Length {
 	public abstract Length clone(double val);
 	
 	public Length convert(Length l1){
-		return this.clone(l1.getConversionToCentimeter()/l1.getconv_fc());
+		return this.clone(l1.getConversionToCentimeter()/this.getconv_fc());
 	}
 	
 	public Length add(Length l1){

@@ -1,7 +1,7 @@
 
 public class Foot extends Length{
 
-	private final double conversion_factor=0.0328084;
+	private final double conversion_factor=30.48;
 	public Foot(double qty) {
 		super(qty);
 		

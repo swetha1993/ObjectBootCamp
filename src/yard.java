@@ -1,7 +1,7 @@
 
 public class Yard extends Length{
 
-	private final double conversion_factor=0.0109361;
+	private final double conversion_factor=91.44;
 	public Yard(double qty) {
 		super(qty);
 		// TODO Auto-generated constructor stub

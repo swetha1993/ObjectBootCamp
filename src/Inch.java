@@ -1,7 +1,7 @@
 
 public class Inch extends Length{
 
-	private final double conversion_factor=0.393701;
+	private final double conversion_factor=2.54;
 	public Inch(double qty) {
 		super(qty);
 

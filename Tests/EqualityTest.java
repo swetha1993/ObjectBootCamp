@@ -36,10 +36,9 @@ public class EqualityTest{
 	@Test
 	public void testForInchToFeetConversion(){
 	
-		Length foot=new Foot(10.000000320000002);
+		Length foot=new Foot(10.0);
 		Length inch=new Inch(120);
 		Foot foot2=(Foot)foot.convert(inch);
-		
 		Assert.assertTrue(foot.checkEquality(foot2));
 		}
 	
@@ -55,36 +54,30 @@ public class EqualityTest{
 	@Test
 	public void testForInchToMeterConversion(){
 		Inch inch=new Inch(10);
-		/*Meter m=Meter.convert(inch);
+		Meter m1=new Meter(0.254);
+		Meter m=(Meter) m1.convert(inch);
 
-		Assert.assertEquals(inch.getConversionToCentimeter(),m.getConversionToCentimeter(), 1);
-	*/}
+		Assert.assertTrue(m.checkEquality(m1));
+	}
 	
-	/*@Test
+	@Test
 	public void TestForAdditionofInchAndMeter(){
-		Inch inch=new Inch(10);
-		Meter meter=new Meter(20);
-		Meter addResult=meter.add(inch);
+		Length inch=new Inch(10);
+		Length meter=new Meter(20);
+		Meter addResult=(Meter) meter.add(inch);
 		Assert.assertTrue(addResult.qty==20.254);
-	}*/
+	}
 	
 	@Test
 	public void TestForAdditionofCentimeterAndMeter(){
-		Meter l1=new Meter(1);
-		Centimeter l2=new Centimeter(200);
+		Length l1=new Meter(1);
+		Length l2=new Centimeter(200);
 		Meter l3=(Meter)l1.add(l2);
 		
 		Assert.assertTrue(l3.qty==3);
 	}
 	
-	/*@Test
-	public void TestForIncorrectAdditionOfInchAndMeter(){
-		Inch inch=new Inch(10);
-		Meter meter=new Meter(20);
-		Meter addResult=meter.add(inch);
-		Assert.assertFalse(addResult.qty!=20.254);
-	}
-	*/
+	
 	@Test
 	public void TestForEqualityOfTeaspoonAndTablespoon(){
 		Teaspoon t1=new Teaspoon(3);
