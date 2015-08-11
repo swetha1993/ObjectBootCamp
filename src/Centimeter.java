@@ -1,6 +1,7 @@
 
-public class Centimeter extends Unit {
+public class Centimeter extends Length {
 	
+	private final double conversion_factor=1;
 	public Centimeter(double qty) {
 		super(qty);
 		
@@ -10,13 +11,14 @@ public class Centimeter extends Unit {
 	public double getConversionToCentimeter() {
 		return qty;
 	}
-	
-	public static Centimeter convert(Unit qty){
-		return new Centimeter(qty.getConversionToCentimeter());
+
+	@Override
+	public Length clone(double val) {
+		return new Centimeter(val);
 	}
-	
-	public Centimeter add(Unit qty){
-		Centimeter cm=new Centimeter(this.getConversionToCentimeter()+qty.getConversionToCentimeter());
-		return cm;
+
+	@Override
+	public double getconv_fc() {
+		return conversion_factor;
 	}
 }

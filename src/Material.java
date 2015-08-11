@@ -1,6 +1,6 @@
 
 public class Material{
 	
-	Unit qty;
+	Length qty;
 
 }

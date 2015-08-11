@@ -1,10 +1,14 @@
 
-public class Foot extends Unit{
+public class Foot extends Length{
 
-	
+	private final double conversion_factor=0.0328084;
 	public Foot(double qty) {
 		super(qty);
 		
+	}
+	
+	public double getconv_fc(){
+		return conversion_factor;
 	}
 
 	@Override
@@ -12,13 +16,9 @@ public class Foot extends Unit{
 		return qty*12*2.54;
 	}
 	
-	public static Foot convert(Unit qty){
-		return new Foot(qty.getConversionToCentimeter()*0.0328084);
-	}
-	
-	public Foot add(Unit qty){
-		Centimeter cm=new Centimeter(this.getConversionToCentimeter()+qty.getConversionToCentimeter());
-		return Foot.convert(cm);
+	@Override
+	public Length clone(double val) {
+		return new Foot(val);
 	}
 
 }

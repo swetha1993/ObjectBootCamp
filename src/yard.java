@@ -1,7 +1,8 @@
 
-public class yard extends Unit{
+public class Yard extends Length{
 
-	public yard(double qty) {
+	private final double conversion_factor=0.0109361;
+	public Yard(double qty) {
 		super(qty);
 		// TODO Auto-generated constructor stub
 	}
@@ -11,12 +12,13 @@ public class yard extends Unit{
 		return qty*91.44;
 	}
 
-	public static yard convert(Unit qty){
-		return new yard(qty.getConversionToCentimeter()*0.0109361);
+	@Override
+	public Length clone(double val) {
+		return new Yard(val);
 	}
-	
-	public yard add(Unit qty){
-		Centimeter cm=new Centimeter(this.getConversionToCentimeter()+qty.getConversionToCentimeter());
-		return yard.convert(cm);
+
+	@Override
+	public double getconv_fc() {
+		return conversion_factor;
 	}
 }

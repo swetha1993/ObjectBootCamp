@@ -1,6 +1,8 @@
 
-public class Meter extends Unit{
+public class Meter extends Length{
 
+	private final double conversion_factor=0.01;
+	
 	public Meter(double qty) {
 		super(qty);
 	}
@@ -9,14 +11,16 @@ public class Meter extends Unit{
 	public double getConversionToCentimeter(){
 		return qty*100;
 	}
+
 	
-	public static Meter convert(Unit qty){
-		return new Meter(qty.getConversionToCentimeter()*0.01);
+	@Override
+	public Length clone(double val) {
+		return new Meter(val);
 	}
-	
-	public Meter add(Unit qty){
-		Centimeter cm=new Centimeter(this.getConversionToCentimeter()+qty.getConversionToCentimeter());
-		return Meter.convert(cm);
+
+	@Override
+	public double getconv_fc() {
+		return conversion_factor;
 	}
 	
 }
